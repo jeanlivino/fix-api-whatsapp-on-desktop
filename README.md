@@ -13,3 +13,27 @@ This can be solved with a simple script that will redirect the user according to
 * A Change where “YOURNUMBER” is by its number in the following format 15551234567, without the “+” and “()”..
 * Replace the text “YOURTEXT” with what you want the person to send by changing the space for “+”. Ex. “I+Want”
 * Save the file named index.php and upload it to your server.
+```
+<?php
+// Fix Api Whatsapp on Desktops
+// Dev: Jean Livino
+$iphone = strpos($_SERVER['HTTP_USER_AGENT'],"iPhone");
+$android = strpos($_SERVER['HTTP_USER_AGENT'],"Android");
+$palmpre = strpos($_SERVER['HTTP_USER_AGENT'],"webOS");
+$berry = strpos($_SERVER['HTTP_USER_AGENT'],"BlackBerry");
+$ipod = strpos($_SERVER['HTTP_USER_AGENT'],"iPod");
+// check if is a mobile
+if ($iphone || $android || $palmpre || $ipod || $berry == true)
+{
+ header('Location: https://api.whatsapp.com/send?phone=YOURNUMBER&text=YOURTEXT');
+ //OR
+ echo "<script>window.location='https://api.whatsapp.com/send?phone=YOURNUMBER&text=YOURTEXT'</script>";
+}
+// all others
+else {
+ header('Location: https://web.whatsapp.com/send?phone=YOURNUMBER&text=YOURTEXT');
+ //OR
+ echo "<script>window.location='https://web.whatsapp.com/send?phone=YOURNUMBER&text=YOURTEXT'</script>";
+}
+?>
+```
