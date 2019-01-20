@@ -2,6 +2,8 @@
 
 How to solve the WhatsApp api link problem “Click to Chat” does not work in Firefox and Safari desktop browsers by creating a “responsive” WhatsApp link.
 
+## [My WhatsApp Link Generator](https://github.com/jeanlivino/whatsapp-link-generator)
+
 ## Getting Started
 
 There are two bases for you to do this solution: api.whatsapp and web.whatsapp. Throughout the internet you will find people teaching with api., However in some tests I realized that it does not work in Firefox and Safari desktop browsers. These only work the web.whatsapp and the web does not work on mobiles.
